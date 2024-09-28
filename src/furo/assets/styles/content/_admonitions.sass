@@ -2,35 +2,35 @@
 @use "../variables" as *
 
 .admonition, .topic
-  border-radius: 4px;
-  margin: 1rem auto;
-  padding: 0.8rem;
+  border-radius: 4px
+  margin: 1rem auto
+  padding: 0.8rem
 
   > p:first-child
-    margin-top: 0;
-    margin-bottom: 0;
-    display: block;
-    font-weight: bold;
-    font-size: 0.75em;
-    padding-bottom: 0.125rem;
+    margin-top: 0
+    margin-bottom: 0
+    display: block
+    font-weight: bold
+    font-size: 0.75em
+    padding-bottom: 0.125rem
 
   > p:nth-child(2)
-    margin-top: 0;
+    margin-top: 0
 
   > p:last-child
-    margin-bottom: 0;
+    margin-bottom: 0
 
 .admonition
-  background: var(--color-admonition-title-background);
-  border-left: 4px solid var(--color-admonition-title);
+  background: var(--color-admonition-title-background)
+  border-left: 4px solid var(--color-admonition-title)
 
   > p:first-child
-    color: var(--color-admonition-title);
+    color: var(--color-admonition-title)
 
 @each $type, $value in $admonitions
   .admonition.#{$type}
-    background: var(--color-admonition-title-background--#{$type});
-    border-left: 4px solid var(--color-admonition-title--#{$type});
+    background: var(--color-admonition-title-background--#{$type})
+    border-left: 4px solid var(--color-admonition-title--#{$type})
   
     > p:first-child
-      color: var(--color-admonition-title--#{$type});
+      color: var(--color-admonition-title--#{$type})
