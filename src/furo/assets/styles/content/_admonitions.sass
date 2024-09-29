@@ -1,7 +1,7 @@
 @use "sass:list"
 @use "../variables" as *
 
-// The design here is strongly inspired by just-the-docs.
+// The design here is strongly inspired by mkdocs-material and just-the-docs.
 .admonition, .topic
   margin: 1rem auto
   padding: 0.5rem
@@ -54,7 +54,7 @@ p.topic-title
 .topic
   background-color: var(--color-topic-title-background)
 
-  > .admonition-title::before
+  > .topic-title::before
     background-color: var(--color-topic-title)
     mask-image: var(--icon-topic-default)
     mask-repeat: no-repeat
