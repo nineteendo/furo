@@ -55,10 +55,12 @@ p.topic-title
 .topic
   background-color: var(--color-topic-title-background)
 
-  > .topic-title::before
-    background-color: var(--color-topic-title)
-    mask-image: var(--icon-topic-default)
-    mask-repeat: no-repeat
+  > .topic-title
+    color: var(--color-admonition-title)
+    &::before
+      background-color: var(--color-topic-title)
+      mask-image: var(--icon-topic-default)
+      mask-repeat: no-repeat
 
 //
 // Variants
