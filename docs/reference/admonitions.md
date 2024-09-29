@@ -186,10 +186,10 @@ the CSS would be something like:
 }
 .admonition.pied-piper {
   background-color: rgba(43, 155, 70, 0.1);
-  border-color: rgb(43, 155, 70)
+  border-color: rgb(43, 155, 70);
 }
 .admonition.pied-piper > .admonition-title {
-  color: rgb(43, 155, 70)
+  color: rgb(43, 155, 70);
 }
 .admonition.pied-piper > .admonition-title::before {
   background-color: rgb(43, 155, 70);
