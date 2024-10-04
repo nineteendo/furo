@@ -53,6 +53,7 @@ def get_navigation_tree(toctree_html: str) -> str:
             "label",
             attrs={
                 "for": checkbox_name,
+                "tabindex": "0",
             },
         )
         label.append(_get_navigation_expand_image(soup))
