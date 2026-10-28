@@ -1,12 +1,10 @@
 @use "sass:list"
 @use "../variables" as *
 
-// The design here is strongly inspired by mkdocs-material.
+// The design here is strongly inspired by mkdocs-material and just-the-docs.
 .admonition, .topic
   margin: 1rem auto
-  padding: 0 0.5rem 0.5rem 0.5rem
-
-  background: var(--color-admonition-background)
+  padding: 0.5rem
 
   border-radius: 0.2rem
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1)
@@ -27,11 +25,8 @@
 .admonition p.admonition-title,
 p.topic-title
   position: relative
-  margin: 0 -0.5rem 0.5rem
+  margin: 0 -0.5rem
   padding-inline-start: 2rem
-  padding-inline-end: .5rem
-  padding-top: .4rem
-  padding-bottom: .4rem
 
   font-weight: 500
   font-size: var(--admonition-title-font-size)
@@ -46,19 +41,23 @@ p.topic-title
     height: 1rem
 
 // Default styles
-p.admonition-title
+.admonition
   background-color: var(--color-admonition-title-background)
-  &::before
-    background-color: var(--color-admonition-title)
-    mask-image: var(--icon-admonition-default)
-    mask-repeat: no-repeat
+  > .admonition-title
+    color: var(--color-admonition-title)
+    &::before
+      background-color: var(--color-admonition-title)
+      mask-image: var(--icon-admonition-default)
+      mask-repeat: no-repeat
 
-p.topic-title
+.topic
   background-color: var(--color-topic-title-background)
-  &::before
-    background-color: var(--color-topic-title)
-    mask-image: var(--icon-topic-default)
-    mask-repeat: no-repeat
+  > .topic-title
+    color: var(--color-topic-title)
+    &::before
+      background-color: var(--color-topic-title)
+      mask-image: var(--icon-topic-default)
+      mask-repeat: no-repeat
 
 //
 // Variants
@@ -68,9 +67,10 @@ p.topic-title
 
   @each $type, $value in $admonitions
     &.#{$type}
+      background-color: var(--color-admonition-title-background--#{$type})
       border-inline-start-color: var(--color-admonition-title--#{$type})
       > .admonition-title
-        background-color: var(--color-admonition-title-background--#{$type})
+        color: var(--color-admonition-title--#{$type})
         &::before
           background-color: var(--color-admonition-title--#{$type})
           mask-image: var(--icon-#{list.nth($value, 2)})
